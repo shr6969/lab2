@@ -64,9 +64,8 @@ function loadProducts(category) {
 
 function uploadFilteredProducts(filteredProducts) {
     const productsContainer = document.getElementById("products");
-    productsContainer.innerHTML = ""; // Clear previous content
+    productsContainer.innerHTML = ""; 
 
-    // Display all products
     filteredProducts.forEach(product => {
         const productCard = createProductCard(product);
         productsContainer.appendChild(productCard);
@@ -77,7 +76,6 @@ function createProductCard(product) {
     const productCard = document.createElement("div");
     productCard.classList.add("product-card");
 
-    // Product image
     const imageContainer = document.createElement("div");
     imageContainer.classList.add("image-container");
 
@@ -86,7 +84,6 @@ function createProductCard(product) {
     image.alt = product.name;
     imageContainer.appendChild(image);
 
-    // Super racket description (hidden by default)
     const superRacket = document.createElement("p");
     superRacket.classList.add("super-racket");
     superRacket.textContent = "Super racket";
@@ -94,7 +91,6 @@ function createProductCard(product) {
 
     productCard.appendChild(imageContainer);
 
-    // Product details
     const details = document.createElement("div");
     details.classList.add("product-details");
 
@@ -108,7 +104,6 @@ function createProductCard(product) {
 
     productCard.appendChild(details);
 
-    // Event listeners to show/hide "Super racket" on hover
     imageContainer.addEventListener("mouseover", () => {
         superRacket.style.display = "block";
     });
